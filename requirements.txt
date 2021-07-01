@@ -16,4 +16,4 @@ opencv_python == 4.5.2.54
 tensorflow == 2.5.0
 
 # C:\Users\alexa\tomography-oct-turings\app.py: 14
-numpy == 1.18.1
+numpy == 1.19.2
