@@ -10,7 +10,7 @@ Pillow == 6.2.2
 matplotlib == 2.2.5
 
 # C:\Users\alexa\sample-webapp\app.py: 15
-opencv_python == 4.5.2.54
+opencv_python == 4.3.0.38
 
 # C:\Users\alexa\sample-webapp\app.py: 13
 tensorflow == 2.5.0
