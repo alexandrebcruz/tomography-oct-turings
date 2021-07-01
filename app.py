@@ -136,7 +136,7 @@ path_models = 'modelos/'
 #    featurenet_json = json_file.read()
 #featurenet = tf.keras.models.model_from_json(featurenet_json)
 #featurenet.load_weights(path_models + 'featurenet.h5')
-loadnet = tf.keras.applications.ResNet50V2(input_shape = (shape_reduzido[0], shape_reduzido[1], 3), include_top = False, weights = 'imagenet')
+loadnet = tf.keras.applications.ResNet50V2(input_shape = (512, 512, 3), include_top = False, weights = 'imagenet')
 loadnet.trainable = False
 featurenet = tf.keras.Sequential([loadnet, tf.keras.layers.GlobalAveragePooling2D()])
 
