@@ -4,7 +4,7 @@
 Flask == 1.1.1
 
 # C:\Users\alexa\sample-webapp\app.py: 5
-Pillow == 7.0.0
+Pillow == 6.2.2
 
 # C:\Users\alexa\sample-webapp\app.py: 7,16,17
 matplotlib == 3.1.3
