@@ -132,14 +132,18 @@ def colorir_heatmap(img_heatmap, use_heatmap_alpha, alpha = 0.4):
 path_models = 'modelos/'
 
 
-with open(path_models + 'featurenet.json', 'r') as json_file:
-    featurenet_json = json_file.read()
-featurenet = tf.keras.models.model_from_json(featurenet_json)
-featurenet.load_weights(path_models + 'featurenet.h5')
+#with open(path_models + 'featurenet.json', 'r') as json_file:
+#    featurenet_json = json_file.read()
+#featurenet = tf.keras.models.model_from_json(featurenet_json)
+#featurenet.load_weights(path_models + 'featurenet.h5')
+loadnet = tf.keras.applications.ResNet50V2(input_shape = (shape_reduzido[0], shape_reduzido[1], 3), include_top = False, weights = 'imagenet')
+loadnet.trainable = False
+featurenet = tf.keras.Sequential([loadnet, tf.keras.layers.GlobalAveragePooling2D()])
 
 with open(path_models + 'model_baseline_nn.json', 'r') as json_file:
     model_baseline_nn_json = json_file.read()
 model_baseline_nn = tf.keras.models.model_from_json(model_baseline_nn_json)
+
 model_baseline_nn.load_weights(path_models + 'weights_baseline.h5')
 
 pert_cam = PerturbationCAM(featurenet, model_baseline_nn, eh_nn = True) 
