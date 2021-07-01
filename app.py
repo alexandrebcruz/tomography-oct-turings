@@ -131,13 +131,14 @@ def colorir_heatmap(img_heatmap, use_heatmap_alpha, alpha = 0.4):
 
 path_models = 'modelos/'
 
+
 with open(path_models + 'featurenet.json', 'r') as json_file:
-  featurenet_json = json_file.read()
+    featurenet_json = json_file.read()
 featurenet = tf.keras.models.model_from_json(featurenet_json)
 featurenet.load_weights(path_models + 'featurenet.h5')
 
 with open(path_models + 'model_baseline_nn.json', 'r') as json_file:
-  model_baseline_nn_json = json_file.read()
+    model_baseline_nn_json = json_file.read()
 model_baseline_nn = tf.keras.models.model_from_json(model_baseline_nn_json)
 model_baseline_nn.load_weights(path_models + 'weights_baseline.h5')
 
